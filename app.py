@@ -16,8 +16,8 @@ win=px.bar(df,x="winner",title="Best Team Based on Winning count")
 pom=px.bar(df,y="player_of_match",title="Best Player")
 run=px.bar(df,x="winner",y="win_by_runs",title="Best Team based on high marginal win by run")
 wic=px.bar(df,x="winner",y="win_by_wickets",title="Best team based win by wicket")
-LVET=px.bar(df,y='venue',color='winner',title='Luckiest Venue for Each Team',barmode='relative')
-WPWT= px.bar(df,x='toss_winner',y='winner',color="winner",title='Winning probability by Winning Toss')
+lvet=px.bar(df,y='venue',color='winner',title='Luckiest Venue for Each Team',barmode='relative')
+wpwt= px.bar(df,x='toss_winner',y='winner',color="winner",title='Winning probability by Winning Toss')
 
 app.layout = html.Div(children=[
    html.H1(children='Analysis of IPL dataset',style={'textalign':'center'}),
@@ -44,11 +44,11 @@ app.layout = html.Div(children=[
    ),
    dcc.Graph(
        id='example-graph-5',
-       figure=LVET
+       figure=lvet
    ),
    dcc.Graph(
        id='example-graph-6',
-       figure=WPWT
+       figure=wpwt
    )
 ])
  
