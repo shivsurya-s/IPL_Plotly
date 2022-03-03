@@ -1,13 +1,14 @@
 import pandas as pd
-from jupyter_dash import JupyterDash
 import dash
+import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
-
-app = JupyterDash(__name__)
-
+USERNAME_PASSWORD_PAIRS=[['msd','msd']]
+app = dash.Dash(__name__)
+auth= dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
+server=app.server
 df=pd.read_csv("https://raw.githubusercontent.com/srinathkr07/IPL-Data-Analysis/master/matches.csv")
 
 df=df.fillna(0)
